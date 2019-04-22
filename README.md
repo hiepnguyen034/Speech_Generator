@@ -8,7 +8,7 @@ Step 1: clone this  repo
 
 Step2:
 
-Run `python customized_test.py` to generate speeches. 
+Run `python generate.py` to generate speeches. 
 
 Step3:
 

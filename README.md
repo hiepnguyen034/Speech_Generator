@@ -1,0 +1,1 @@
+Run `python customized_test.py` to generate speeches. Vocabs are limited to 6645 words

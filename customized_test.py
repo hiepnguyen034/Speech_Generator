@@ -37,10 +37,10 @@ def restore_model(sentence,num_words):
         prediction=graph.get_tensor_by_name('prediction:0')
         x=graph.get_tensor_by_name('input:0')
         #result=sess.run([pred], feed_dict=feed_dict)
-        seed = test[(len(sentence)-20)//3:(len(sentence)-20)//3+1:]
+        seed = test[(len(sentence)-max_len)//step:(len(sentence)-max_len)//step+1:]
         with open ('unique_chars.pkl', 'rb') as g:
             unique_chars=pickle.load(g)
-        seed_chars = sentence[:len(sentence)-19]
+        seed_chars = sentence[:len(sentence)-max_len]
         #seed_chars=''
         for each in seed[0]:
                 seed_chars += unique_chars[np.where(each == max(each))[0][0]]

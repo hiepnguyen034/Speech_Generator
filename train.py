@@ -82,7 +82,7 @@ def run(train_data, target_data, unique_chars, len_unique_chars):
         print("Model is saved to ", save_path)
         with open ('unique_chars.pkl', 'wb') as g:
             pickle.dump(unique_chars,g)
-        sess.close()
+
 
 
 if __name__ == '__main__':

@@ -16,15 +16,21 @@ temperature = 1.0
 len_unique_chars=6645
 
 def take_input():
-    num_words=input('Number of words in the speech: ')
     while True:
-        sentence=input('Please insert the beginning of the speech: ')
+        num_words=input('Number of words in the speech: ')
+        try:
+            num_words=int(num_words)
+            break
+        except ValueError as e:
+            print(e, 'We need an integer here') 
+    while True:
+        sentence=input('Please insert the beginning of the speech (first 10 words will be used): ')
         if len(sentence)<20:
             print ('We need more than 10 words. Please try again')
         else:
             break
 
-    return int(num_words),sentence
+    return num_words,sentence
 
 
 def restore_model(sentence,num_words):
@@ -37,10 +43,10 @@ def restore_model(sentence,num_words):
         prediction=graph.get_tensor_by_name('prediction:0')
         x=graph.get_tensor_by_name('input:0')
         #result=sess.run([pred], feed_dict=feed_dict)
-        seed = test[(len(sentence)-max_len)//step:(len(sentence)-max_len)//step+1:]
+        seed = test[:1]
         with open ('unique_chars.pkl', 'rb') as g:
             unique_chars=pickle.load(g)
-        seed_chars = sentence[:len(sentence)-max_len]
+        seed_chars = ''
         #seed_chars=''
         for each in seed[0]:
                 seed_chars += unique_chars[np.where(each == max(each))[0][0]]

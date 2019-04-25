@@ -14,6 +14,9 @@ batch_size = 64
 epoch = 64
 temperature = 1.0
 len_unique_chars=6645
+import os
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' 
 
 def take_input():
     while True:

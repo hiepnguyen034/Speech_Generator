@@ -86,6 +86,6 @@ def run(train_data, target_data, unique_chars, len_unique_chars):
 
 
 if __name__ == '__main__':
-    text=read_data('obama_speech.txt')
+    text=read_data('speeches.txt')
     train_data, target_data, unique_chars, len_unique_chars = featurize(text)
     run(train_data, target_data, unique_chars, len_unique_chars)

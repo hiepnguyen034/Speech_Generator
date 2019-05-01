@@ -3,7 +3,9 @@ import numpy as np
 import io
 import re
 from tensorflow.python.framework import ops
-import pickle 
+from tensorflow.contrib.rnn.python.ops import lstm_ops
+import pickle
+import matplotlib.pyplot as plt
 
 
 max_len = 20
@@ -14,6 +16,7 @@ batch_size = 64
 epoch = 64
 temperature = 1.0
 len_unique_chars=6645
+num_layers=2
 
 def read_data(file_name):
     '''

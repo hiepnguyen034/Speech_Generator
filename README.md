@@ -22,7 +22,3 @@ Provide input sentences  (Vocabs are limited to 6645 words) and desired length f
 
 ![demo](https://user-images.githubusercontent.com/29159878/56707649-b9ab4a80-66e7-11e9-8bc1-52045ad3e1ea.png)
 
-**Graph**
-
-![graph](https://user-images.githubusercontent.com/29159878/57182545-218f2d00-6e6e-11e9-8c41-79eb58ee0bc6.png)
-
